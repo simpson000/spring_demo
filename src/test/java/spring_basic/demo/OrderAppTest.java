@@ -4,26 +4,22 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import spring_basic.demo.member.Grade;
 import spring_basic.demo.member.Member;
+import spring_basic.demo.order.Order;
 import spring_basic.demo.member.MemberService;
 import spring_basic.demo.member.MemberServiceImpl;
+import spring_basic.demo.order.OrderService;
+import spring_basic.demo.order.OrderServiceImpl;
+
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class MemberAppTest {
-    MemberService memberService ;
-
+class OrderAppTest {
+    MemberService memberService;
+    OrderService orderService;
     @BeforeEach
     void setUp() {
         AppConfig appConfig = new AppConfig();
         memberService = appConfig.memberService();
     }
 
-
-    @Test
-    void main() {
-        Member member = new Member(1L, "memberA", Grade.VIP);
-        memberService.join(member);
-        Member find = memberService.findMember(1L);
-        assertEquals(member, find);
-    }
 }
